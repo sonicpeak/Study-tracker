@@ -1,21 +1,40 @@
-## Study Tracker
+# Study Tracker
 
-A simple terminal-based Python app to track your study sessions.
+A simple terminal-based Python CLI app to track your study sessions.
 
-## Features (v1)
-- Add study sessions (subject + time in hours)
+## Features
+
+### v1
+- Add study sessions (subject + time)
 - View all sessions
 - Calculate total study time
-- Menu-driven CLI interface
+- Menu-driven interface
 
-## Installation
-1. Clone the repo
+### v2
+- Data persistence using JSON
+- Sessions are saved even after closing the program
+- Automatically loads previous sessions on startup
 
-## Usage
-1. Choose from the menu to add sessions, view total time, or exit.
-2. Enter the subject and time studied when prompted.
+## How to Run
 
-## Future Plans
-- Save sessions to a file (persistence)
-- Add data analysis / stats
-- Add a nicer CLI interface
+1. Clone the repository:
+   git clone https://github.com/sonicpeak/Study-tracker.git
+
+2. Navigate to the folder:
+   cd Study-tracker
+
+3. Run the program:
+   python study_tracker.py
+
+## Tech Used
+- Python
+- JSON (for data storage)
+
+## Future Plans (v3)
+- Delete a session
+- Edit a session
+- Show statistics (most studied subject, etc.)
+- Add date tracking
+
+## Author
+Adarsh
