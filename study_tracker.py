@@ -1,4 +1,11 @@
-sessions = []
+import json
+
+# Load existing sessions from file
+try:
+    with open("sessions.json", "r") as f:
+        sessions = json.load(f)
+except:
+    sessions = []
 
 while True:
     print("\n1. Add Study Session")
@@ -10,8 +17,15 @@ while True:
     if choice == "1":
         subject = input("Enter subject: ")
         time = float(input("Enter time studied (hours): "))
-        sessions.append((subject, time))
-        print(f"Added: {subject} for {time} hrs")
+
+        
+        sessions.append({"subject": subject, "time": time})
+
+        # Saveing to file immediately
+        with open("sessions.json", "w") as f:
+            json.dump(sessions, f)
+
+        print("Session added")
 
     elif choice == "2":
         total = 0
@@ -22,13 +36,12 @@ while True:
             print("Your sessions include:")
 
             for s in sessions:
-                print("Subject:", s[0], "for", s[1], "hrs")
-                total += s[1]
+                print("Subject:", s["subject"], "for", s["time"], "hrs")
+                total += s["time"]
 
-            print(f"Total time studied is {total} hrs")
+            print("Total time studied is", total, "hrs")
 
     elif choice == "3":
-        print("Goodbye!")
         break
 
     else:
