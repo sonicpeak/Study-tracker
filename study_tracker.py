@@ -21,7 +21,7 @@ while True:
         
         sessions.append({"subject": subject, "time": time})
 
-        # Saveing to file immediately
+        # Saving to file immediately
         with open("sessions.json", "w") as f:
             json.dump(sessions, f)
 
